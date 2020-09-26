@@ -47,6 +47,14 @@ func Filter(vs []string, f func(string) bool) []string {
 	return vsf
 }
 
+func Map(vs []string, f func(string) string) []string {
+	vsm := make([]string, len(vs))
+	for i, v := range vs {
+		vsm[i] = f(v)
+	}
+	return vsm
+}
+
 func main() {
 	strs := []string{"peach", "apple", "pear", "plum"}
 	fmt.Println(Index(strs, "pear"))
@@ -64,4 +72,6 @@ func main() {
 	fmt.Println(Filter(strs, func(v string) bool {
 		return strings.Contains(v, "e")
 	}))
+
+	fmt.Println(Map(strs, string.ToUpper))
 }
