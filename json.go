@@ -15,4 +15,7 @@ func main() {
 
 	fltB, _ := json.Marshal(2.34)
 	fmt.Println(string(fltB))
+
+	strB, _ := json.Marshal("gopher")
+	fmt.Println(string(strB))
 }
